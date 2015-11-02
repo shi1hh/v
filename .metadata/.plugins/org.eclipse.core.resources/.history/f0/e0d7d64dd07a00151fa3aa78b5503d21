@@ -1,0 +1,77 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="text">
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="waimai_tb_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="waimai_money_text">
+        <item name="android:textColor">#FF3030</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="back">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:text">←</item>
+    </style>
+
+    <style name="waimai_store_name_textsize">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="normal_text">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="login_">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">登录</item>
+    </style>
+
+    <style name="forget_psw">
+        <item name="android:textColor">#1EA5FF</item>
+        <item name="android:text">忘记密码?</item>
+    </style>
+
+    <style name="login_message">
+        <item name="android:textColor">#1EA5FF</item>
+        <item name="android:text">短信验证码登录</item>
+    </style>
+    <style name="faxian_reward_btn">
+        <item name="android:textColor"
+            >#ffffff</item>
+        <item name="android:textColor">#FF4500</item>
+        <item name="android:text">抽奖</item>
+        
+    </style>
+
+
+</resources>

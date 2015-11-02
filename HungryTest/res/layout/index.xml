@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_main"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/radioGroup_navigation"
+        android:layout_alignParentTop="true" >
+    </android.support.v4.view.ViewPager>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/navigation_stroke"
+        android:checkedButton="@+id/radio_waimai"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_waimai"
+            style="@style/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/waimai"
+            android:padding="6dp"
+            android:text="@string/navigation1"
+            android:textColor="@drawable/navigation_bot_text" />
+
+        <RadioButton
+            android:id="@+id/radio_dingdan"
+            style="@style/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/dingdan"
+            android:padding="6dp"
+            android:text="@string/navigation2"
+            android:textColor="@drawable/navigation_bot_text" />
+
+        <RadioButton
+            android:id="@+id/radio_faxian"
+            style="@style/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/faxian"
+            android:padding="6dp"
+            android:text="@string/navigation3"
+            android:textColor="@drawable/navigation_bot_text" />
+
+        <RadioButton
+            android:id="@+id/radio_wode"
+            style="@style/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/wode"
+            android:padding="6dp"
+            android:text="@string/navigation4"
+            android:textColor="@drawable/navigation_bot_text" />
+    </RadioGroup>
+
+</RelativeLayout>

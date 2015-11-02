@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="15dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="15dp" >
+
+        <ImageView
+            android:id="@+id/imageView_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/cartimg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView_name"
+                style="@style/cart_menu_right_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="小龙虾" />
+
+            <TextView
+                android:id="@+id/textView_note"
+                style="@style/cart_menu_right_item_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新奥良尔鸡块4块+香辣鸡块2块" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RatingBar
+                    android:id="@+id/ratingBar_favour"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:numStars="5"
+                    android:secondaryProgress="1" />
+                                <TextView
+        android:id="@+id/textView_sells"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       style="@style/cart_menu_right_item_sells"
+        android:text="月售0份" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView_price"
+                    style="@style/cart_menu_right_item_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="15" />
+
+                <ImageButton
+                    android:id="@+id/button_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+            
+                           android:gravity="center_horizontal"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/cart_menu_add_button1" />
+
+                <TextView
+                    android:id="@+id/textView_count"
+                    style="@style/cart_menu_right_item_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+                  android:visibility="invisible"
+                    android:layout_toLeftOf="@+id/button_add"
+                    android:text="1" />
+
+                <ImageButton
+                    android:id="@+id/button_dda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                                 android:layout_marginRight="5dp"
+                   android:gravity="center_horizontal"
+                    android:layout_toLeftOf="@+id/textView_count"
+                    android:visibility="invisible"
+                    android:background="@drawable/cart_menu_add_button2" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

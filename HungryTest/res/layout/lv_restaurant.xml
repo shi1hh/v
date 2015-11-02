@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/imageView_pinnedlist_waimai_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="90dp"
+        android:maxHeight="90dp"  />
+<LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/tv_restau_title"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:gravity="center"
+        style="@style/waimai_store_name_textsize"
+        android:text="TextView" />
+
+    <RatingBar
+        android:id="@+id/ratingBar_favour"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="3dp"
+        android:numStars="5"
+        android:secondaryProgress="1" 
+        android:layout_gravity="center_vertical"
+        />
+
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+       <TextView
+        android:id="@+id/tv_restau_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+                android:singleLine="true"
+        android:gravity="center"
+        android:text="TextView" />
+       <ImageView 
+           android:id="@+id/imageview_iswork"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:visibility="invisible"
+           android:src="@drawable/iswork"
+           />
+</RelativeLayout>
+
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingRight="3dp"
+    >
+    
+   <LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/textView_waimai_minpay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     android:layout_gravity="center"
+style="@style/waimai_money_text"
+        android:text="￥30" />
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+             android:layout_gravity="center"
+        android:text=" 起送" />
+    </LinearLayout>
+       <LinearLayout 
+    android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+    android:layout_height="wrap_content">
+        <TextView
+        android:id="@+id/textView_waimai_dispatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+style="@style/waimai_money_text"
+        android:text="免" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="配送费"/>
+        </LinearLayout>
+</LinearLayout>
+</LinearLayout>

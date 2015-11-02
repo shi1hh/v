@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+<dimen name="login_usertop_margin">13dp</dimen>
+<dimen  name="login_user_pendding">17dp</dimen>
+<dimen name="divider_large">10dp</dimen>
+<dimen name="divider_small">1dp</dimen>
+<dimen name="faxian_timelimi">20sp</dimen>
+<dimen name="pedding_faxian_timelimi">10dp</dimen>
+<dimen name="pedding_faxian_gengduohaoli">5dp</dimen>
+</resources>

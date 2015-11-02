@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sum">#ffffff</color>
+    <color name="balance">#00FF7F</color>
+    <color name="balance_text">#ffffff</color>
+    <color name="lvlft_select">#ffffff</color>
+    <color name="lvlft_black">#CFCFCF</color>
+    <color name="white">#ffffff</color>
+    <color name="navigation_bg">#F6F6F6</color>
+      <color name="blackground">#1EA5FF</color>
+      <color name="text_gray">#CCCCCC</color>
+      <color name="waimai_divider">#EEEEEC</color>
+</resources>

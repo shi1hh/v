@@ -1,0 +1,161 @@
+package com.example.hungrytest;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Fragments.Fragmentdingdan;
+import Fragments.Fragmentfaxian;
+import Fragments.Fragmentwaimai;
+import Fragments.Fragmentwode;
+import adp.MyFragmentPagerAdapter;
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+
+public class IndexActivity extends FragmentActivity {
+
+	/**
+	 * ViewPager+Radio+Fragment控制导航
+	 */
+	ViewPager vpPager;
+	RadioGroup radioGroup;
+	List<View> views=new ArrayList<View>();//ViewPager数据
+	
+	List<Fragment> fragments;//各个导航到的Fragment
+	
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.index);
+        init();
+   
+    }
+    public void init()
+    {    
+    	initViewPager();
+    	initRadio();
+    	addListener();
+    }
+
+    public void  initViewPager() {
+     	vpPager=(ViewPager) findViewById(R.id.viewpager_main);
+    	fragments =new ArrayList<Fragment>();
+    	Fragmentdingdan fragmentdingdan=new Fragmentdingdan();
+    	Fragmentfaxian fragmentfaxian=new Fragmentfaxian();
+    	Fragmentwode fragmentwode=new Fragmentwode();
+    	Fragmentwaimai fragmentwaimai=new Fragmentwaimai();
+        fragments.add(fragmentwaimai);
+        fragments.add(fragmentdingdan);
+        fragments.add(fragmentfaxian);
+      	fragments.add(fragmentwode);
+        MyFragmentPagerAdapter fragmentPagerAdapter=new MyFragmentPagerAdapter(this.getSupportFragmentManager(),fragments);
+    	vpPager.setAdapter(fragmentPagerAdapter);
+        vpPager.setCurrentItem(0);
+	}
+    
+    
+    
+    
+    
+    public void initRadio()
+    {
+    	radioGroup=(RadioGroup) findViewById(R.id.radioGroup_navigation);
+    
+	
+    }
+    /**
+     * 监听Radio选择事件+ViewPager选择撤换事件
+     */
+    public void addListener()
+    {    	
+    	MyOnCheckedChangeListenr checkedChangeListenr=new MyOnCheckedChangeListenr(vpPager);
+	    radioGroup.setOnCheckedChangeListener(checkedChangeListenr);
+	    MyOnPageChangeListener onPageChangeListener=new MyOnPageChangeListener(radioGroup);
+	    vpPager.setOnPageChangeListener(onPageChangeListener);	
+    }
+    class MyOnCheckedChangeListenr implements OnCheckedChangeListener
+    {
+    	private ViewPager vPager;
+
+        public MyOnCheckedChangeListenr(ViewPager vPager)
+        {
+        	this.vPager=vPager;
+        }
+    	
+		@Override
+		public void onCheckedChanged(RadioGroup group, int checkedId) {
+			// TODO Auto-generated method stub
+			switch (checkedId) {
+			case R.id.radio_waimai:
+				vpPager.setCurrentItem(0);
+				break;
+			case R.id.radio_dingdan:
+				vpPager.setCurrentItem(1);
+				break;
+			case R.id.radio_faxian:
+				vpPager.setCurrentItem(2);
+				break;
+			case R.id.radio_wode:
+				vpPager.setCurrentItem(3);
+				break;
+			}
+		}
+    	
+    }
+    class MyOnPageChangeListener implements OnPageChangeListener
+    {
+    	private RadioGroup radioGroup;
+    	
+    	public MyOnPageChangeListener(RadioGroup radioGroup)
+    	{
+    		this.radioGroup=radioGroup;
+    	}
+
+		@Override
+		public void onPageScrollStateChanged(int arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onPageScrolled(int arg0, float arg1, int arg2) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onPageSelected(int arg0) {
+			// TODO Auto-generated method stub
+			switch (arg0) {
+			case 0:
+				this.radioGroup.check(R.id.radio_waimai);
+				break;
+			case 1:
+				this.radioGroup.check(R.id.radio_dingdan);
+				break;
+			case 2:
+				this.radioGroup.check(R.id.radio_faxian);
+				break;
+			case 3:
+				this.radioGroup.check(R.id.radio_wode);
+				break;
+
+			}
+		}
+    	
+    }
+ 
+}

@@ -1,0 +1,231 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="CartActionbar" parent="@android:style/Theme.Holo.Light">
+
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        <item name="android:actionBarStyle">@style/CartActionbarBlackground </item>
+<item name="android:actionBarTabTextStyle">@style/CartActionbarTabText</item> 
+<item name="android:actionBarTabStyle">@style/CartActionbarBackground</item>
+<item name="android:textSize">20sp</item>
+<item name="android:homeAsUpIndicator">@drawable/back</item>
+    </style>
+
+    <style name="CartActionbarBlackground" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/blackground</item>
+           <item name="android:gravity">center_horizontal</item>
+           <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+
+    </style>
+        <style name="MyActionBarTitleText" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#fff</item>
+    </style>
+    <style name="CartActionbarTabText" parent="@android:style/Widget.ActionBar.TabText">
+        <item name="android:textColor">@drawable/selector_cart_tab</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+  <style name="CartActionbarBackground" parent="@android:style/Widget.ActionBar.TabBar" >
+      <item name="android:background">@drawable/selector_cart_tab_background</item>
+      <item name="android:gravity">center_horizontal</item>
+      <item name="android:alignmentMode" >alignBounds</item>
+  </style>
+
+  
+  <style name="Universal" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/CartActionbarBlackground 
+</item>
+<item name="android:textSize">20sp</item>
+<item name="android:homeAsUpIndicator">@drawable/back</item>
+</style>
+
+
+  
+  
+  
+  
+  
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    
+    
+    
+    <style name="text">
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="waimai_tb_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="waimai_money_text">
+        <item name="android:textColor">#FF3030</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="back">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:text">←</item>
+    </style>
+
+    <!-- 外卖页面 -->
+    <style name="waimai_store_name_textsize">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="normal_text">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:padding">12dp</item>
+    </style>
+<!-- 登录页面 -->
+    <style name="login_">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">登录</item>
+    </style>
+
+    <style name="forget_psw">
+        <item name="android:textColor">#1EA5FF</item>
+        <item name="android:text">忘记密码?</item>
+    </style>
+
+    <style name="login_message">
+        <item name="android:textColor">#1EA5FF</item>
+        <item name="android:text">短信验证码登录</item>
+    </style>
+<!-- 发现页面 -->
+    <style name="faxian_reward_btn">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">#FF4500</item>
+        <item name="android:text">抽奖</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    
+    <!-- 购物车 -->
+   <style
+       name="cart_menu_right_grouptext"
+       ><item name="android:textColor">#777777</item>
+<item name="android:textSize">15sp</item>
+<item name="android:background">#F5F5F5</item>
+<item name="android:padding">5dp</item></style>
+
+   <style 
+       name="cart_menu_right_item_name"
+       ><item name="android:textSize">20sp</item>
+       <item name="android:textColor">#333333</item>
+   </style>
+   <style
+       name="cart_menu_right_item_note"
+       ><item name="android:textSize">12sp</item>
+       <item name="android:textColor">#999999</item>
+   </style>
+   <style name="cart_menu_right_item_price">
+       <item name="android:textColor">#FF3030</item>
+       <item name="android:textSize">23sp</item>
+       
+   </style>
+   <style 
+       name="cart_menu_right_item_count"
+       ><item name="android:textColor">@color/blackground</item>
+       <item name="android:textSize">20sp</item>
+       <item name="android:layout_marginRight">5dp</item>
+   </style>
+   <style 
+       name="cart_menu_right_item_sells"
+       ><item name="android:textColor">#999999</item>
+   <item name="android:textSize">12sp</item>
+   <item  name="android:layout_marginLeft">5dp</item></style>
+   <style name="cart_menu_left_item_name" >
+       <item
+           name="android:textSize"
+           >15sp</item>
+       <item  name="android:textColor">#666666</item>
+       <item name="android:layout_marginLeft">8dp</item>
+   </style>
+   <style name="cart_menu_car">
+       <item name="android:height">50dp</item>
+       <item name="android:background">#4E4E4E</item>
+       <item name="android:alpha">0.8</item>
+   </style>
+   <!-- 出错页面 -->
+   <style name="error_button">
+       <item name="android:background"  >@color/blackground</item>
+       <item name="android:textSize">20sp</item>
+       <item name="android:text">重新加载</item>
+       <item name="android:textColor">#ffffff</item>
+       <item name="android:padding">5dp</item>
+   </style>
+   
+   <!-- 商家页面 -->
+   <style name="seller_name">
+<item name="android:gravity">center</item>
+       <item name="android:textSize">20sp</item>
+       
+   </style>
+   <style name="seller_span_text">
+       <item name="android:textColor">@color/text_gray_2</item>
+       <item name="android:textSize">15sp</item>
+       <item name="android:padding">20dp</item>
+   </style>
+   <style name="seller_announcement">
+       <item name="android:textColor">#FF7256</item>
+       <item name="android:text">商家公告</item>
+       <item name="android:padding">12dp</item>
+   </style>
+   <style name="seller_introdu_text">
+       <item name="android:text">商家简介</item>
+       <item name="android:textColor">#9A9A9A</item>
+       <item name="android:padding">12dp</item>
+   </style>
+   <style name="seller_introdu_content">
+       <item name="android:textColor">#333333</item>
+          <item name="android:padding">12dp</item>
+          <item name="android:text">叫外卖，上饿了么！</item>
+   </style>
+   <style name="seller_detail"><item name="android:text">商家信息</item>
+            <item name="android:textColor">#9A9A9A</item>
+                   <item name="android:padding">12dp</item>
+   </style>
+   <style name="seller_detail_content"><item name="android:textColor">#333333</item>
+              <item name="android:padding">12dp</item>
+   </style>
+   
+   <!-- 评价页面 -->
+   <style name="evaluate_service_text">
+       <item name="android:textColor">#9A9A9A</item>
+                <item name="android:padding">5dp</item>
+                <item name="android:text">服务态度</item>
+                <item name="android:textSize">13sp</item>
+   </style>
+   <style name="evaluate_goods_text">
+         <item name="android:textColor">#9A9A9A</item>
+                <item name="android:padding">5dp</item>
+                <item name="android:text">菜品评分</item>
+                                <item name="android:textSize">13sp</item>
+                <item name="android:gravity">center</item>
+   </style>
+   <style name="evaluate_goods_score">
+       <item name="android:textColor">#EE2C2C</item>
+              <item name="android:padding">5dp</item>
+                              <item name="android:textSize">13sp</item>
+               <item name="android:text">分</item>
+   </style>
+
+   
+   
+</resources>

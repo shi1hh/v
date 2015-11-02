@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blackground2"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blackground" >
+
+        <Button
+            android:id="@+id/button_back"
+            style="@style/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:background="@color/blackground"
+            android:gravity="center"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/button_register"
+            style="@style/normal_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button_back"
+            android:layout_alignBottom="@+id/button_back"
+            android:layout_alignParentRight="true"
+            android:background="@color/blackground"
+            android:padding="10dp"
+            android:text="@string/login_reg" />
+        </RelativeLayout>
+        <RelativeLayout 
+                 android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <EditText
+            android:id="@+id/editText_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/login_user_pendding"
+            android:layout_marginTop="@dimen/login_usertop_margin"
+
+            android:ems="10"
+            android:hint="@string/login_user_hint" />
+
+        <EditText
+            android:id="@+id/editText_psw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+ 
+                        android:padding="@dimen/login_user_pendding"
+            android:layout_below="@+id/editText_username"
+            android:ems="10"
+            android:hint="@string/login_psw_hint"
+            android:inputType="textPassword" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editText_psw"
+            android:layout_alignBottom="@+id/editText_psw"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/selector_login_toggle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editText_psw"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/toggleButton1"
+
+            android:text="显示" />
+
+    </RelativeLayout>
+
+</LinearLayout>

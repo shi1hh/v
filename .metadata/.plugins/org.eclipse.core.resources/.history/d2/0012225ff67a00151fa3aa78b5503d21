@@ -1,0 +1,25 @@
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fooder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/button_gengduohaoli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shap_faxian_gengduohaoli"
+            android:padding="@dimen/padding_faxian_gengduohaoli_btn"
+            android:text="@string/faxian_gengduohaoli_button" />
+
+        <TextView
+            android:id="@+id/textView_footder"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_below="@+id/button_gengduohaoli"
+            android:layout_centerHorizontal="true"
+            android:clickable="false" />
+
+    </RelativeLayout>

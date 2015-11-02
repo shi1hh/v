@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#1EA5FF"
+    android:orientation="horizontal"
+    tools:context="com.example.hungrytest.MainActivity" >
+
+
+   <LinearLayout
+       android:id="@+id/linear_title"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:padding="5dp" >
+   <Button
+        android:id="@+id/btn_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:background="#1EA5FF"
+        android:padding="15dp"
+        android:text="跳转" />
+       <Button
+           android:id="@+id/button1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/top" />
+
+       <TextView
+           android:id="@+id/textView_location"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="(海石湾大桥)"
+           android:textColor="#ffffff"
+           android:textSize="15sp" />
+
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:background="@drawable/arow" />
+   </LinearLayout>
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:visibility="invisible" />
+
+</LinearLayout>

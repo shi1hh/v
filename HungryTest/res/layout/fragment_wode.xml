@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+ 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blackground" >
+
+        <TextView
+            style="@style/normal_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:background="@color/blackground"
+            android:gravity="center"
+            android:text="@string/wode_title" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/button_setting"
+            android:background="@drawable/wodetitle1" />
+
+        <Button
+            android:id="@+id/button_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/wodetitle2" />
+    </RelativeLayout>
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:background="@color/blackground"
+           android:id="@+id/login"
+    android:layout_height="wrap_content">
+       
+
+       <ImageView
+           android:id="@+id/imageView_figure"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true"
+           android:maxHeight="60dp"
+           android:padding="20dp"
+           android:scaleType="fitXY"
+       android:layout_centerVertical="true"
+           android:src="@drawable/wodelogo" />
+
+       <TextView
+           android:id="@+id/textView3"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentRight="true"
+                  android:layout_centerVertical="true"
+           android:textSize="30sp"
+           android:layout_marginRight="10dp"
+           android:textColor="@color/white"
+           android:text=">" />
+
+       <TextView
+           android:id="@+id/textView_login"
+           style="@style/normal_text"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentTop="true"
+          
+           android:layout_toRightOf="@+id/imageView_figure"
+           android:text="登录/注册" />
+
+       <TextView
+           android:id="@+id/textView_login_note"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignLeft="@+id/textView_login"
+           android:layout_below="@+id/textView_login"
+           android:textColor="@color/white"
+           android:text="   登录可享受很多特权" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blackground2"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp" >
+
+        <TextView
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawableTop="@drawable/wodewodeyue"
+            android:gravity="center"
+            android:padding="@dimen/padding_wode_yue_jifen_hongbao"
+            android:text="@string/wode_wodeyue" />
+
+        <TextView
+            android:id="@+id/button4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawableTop="@drawable/wodehongbao"
+            android:gravity="center"
+            android:padding="@dimen/padding_wode_yue_jifen_hongbao"
+            android:text="@string/wode_hongbao" />
+
+        <TextView
+            android:id="@+id/button6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawableTop="@drawable/wodejifen"
+            android:gravity="center"
+            android:padding="@dimen/padding_wode_yue_jifen_hongbao"
+            android:text="@string/wode_jifen" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wodewodeshoucan" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wodemeishixiangce"
+        android:layout_marginBottom="8dp" />
+
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wodejifenshangcheng" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wodefanpeisong"
+                android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wodefuwuzhongxin" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wodehuanyingpingfen"
+                android:layout_marginBottom="8dp" />
+  
+</LinearLayout>

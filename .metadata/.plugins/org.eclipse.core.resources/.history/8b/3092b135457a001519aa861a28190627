@@ -1,0 +1,301 @@
+package Fragments;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+import model.Store;
+
+
+
+import com.baidu.mapapi.map.Stroke;
+import com.example.hungrytest.R;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
+
+import JSON.login;
+import Widget.MarqueeTextView;
+import Widget.MeasureExpandableListView;
+import adp.MyPagerAdaper;
+import adp.WaimaiPinnedlistadp;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.R.anim;
+import android.R.integer;
+import android.app.ActionBar.LayoutParams;
+import android.database.DataSetObserver;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.DragEvent;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnDragListener;
+import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
+import android.view.ViewGroup.MarginLayoutParams;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+public class Fragmentwaimai extends Fragment {
+   
+	ViewPager vpViewPager;
+	View view;
+	LayoutInflater layoutInflater;
+	List<View> views=new ArrayList<View>();
+	int diplayWidth;
+	int diplayheight;
+
+	List<Store> Stores=new ArrayList<Store>();
+	
+	LinearLayout flowlayout;
+	EditText editText_search;
+	RelativeLayout relativeLayout;
+	TextView tb_tv1;
+	PullToRefreshScrollView mPullRefreshScrollView;
+	ListView pinnedSectionListView;
+	Spinner[] spinners=new Spinner[6];
+ 
+	
+	private MarqueeTextView marqueeTextView;
+    
+	int heightRela=0;
+	int bit=0;
+	
+	@Override
+	public View onCreateView(LayoutInflater arg0, ViewGroup arg1, Bundle arg2)
+	{
+		view=arg0.inflate(R.layout.fragment_waimai, null);
+		layoutInflater=arg0;
+		init();
+		addListener();
+		return view;
+	}
+	public void init() {
+		
+		
+		
+		diplayWidth=getActivity().getWindowManager().getDefaultDisplay().getWidth();
+		diplayheight=getActivity().getWindowManager().getDefaultDisplay().getHeight();
+		
+		vpViewPager=(ViewPager) view.findViewById(R.id.viewpager_waimai_adv);
+		
+		marqueeTextView = (MarqueeTextView)view.findViewById(R.id.Textview_waimai_tile_2);  
+	    marqueeTextView.setSelected(true);
+        pinnedSectionListView=(ListView) view.findViewById(R.id.listview_waimai);
+        
+		editText_search=(EditText) view.findViewById(R.id.editText_search);
+		
+		
+		relativeLayout=(RelativeLayout) view.findViewById(R.id.relative_1);
+		
+		mPullRefreshScrollView = (PullToRefreshScrollView) view.findViewById(R.id.pull_refresh_scrollview);
+		
+		flowlayout=(LinearLayout) view.findViewById(R.id.flow_llay);*/
+		
+		tb_tv1=(TextView) view.findViewById(R.id.tb_tv1);
+		
+		spinners[0]=(Spinner) view.findViewById(R.id.spinner_waimai_listview1);
+		spinners[1]=(Spinner) view.findViewById(R.id.spinner_waimai_listview2);
+		spinners[2]=(Spinner) view.findViewById(R.id.spinner_waimai_listview3);
+	spinners[3]=(Spinner) view.findViewById(R.id.spinner_waimai_listview4);
+		spinners[4]=(Spinner) view.findViewById(R.id.spinner_waimai_listview5);
+		spinners[5]=(Spinner) view.findViewById(R.id.spinner_waimai_listview6);
+
+        initSpinner();
+        initViewPager();
+        initPinnedlist();
+        initFlowLayout();
+        mPullRefreshScrollView.scrollTo(0, 0);
+		
+		
+	}
+	public void initFlowLayout()
+	{
+		View dividerView=view.findViewById(R.id.divider1);
+		mPullRefreshScrollView.listenerFlowViewScrollState(view, flowlayout);
+	}
+	public void initSpinner()
+	{
+		ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>((this.getActivity()),R.layout.spinner_waimai_listview,spinStrings1);
+		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinners[0].setAdapter(arrayAdapter);
+        arrayAdapter=new ArrayAdapter<String>((this.getActivity()),R.layout.spinner_waimai_listview,spinStrings2);
+		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinners[1].setAdapter(arrayAdapter);
+        arrayAdapter=new ArrayAdapter<String>((this.getActivity()),R.layout.spinner_waimai_listview,spinStrings3);
+		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinners[2].setAdapter(arrayAdapter);
+		arrayAdapter=new ArrayAdapter<String>((this.getActivity()),R.layout.spinner_waimai_listview,spinStrings1);
+		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinners[3].setAdapter(arrayAdapter);
+		arrayAdapter=new ArrayAdapter<String>((this.getActivity()),R.layout.spinner_waimai_listview,spinStrings2);
+		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinners[4].setAdapter(arrayAdapter);
+		arrayAdapter=new ArrayAdapter<String>((this.getActivity()),R.layout.spinner_waimai_listview,spinStrings3);
+		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinners[5].setAdapter(arrayAdapter);
+	
+	}
+	public void initPinnedlist() {
+		getStoreData();
+		WaimaiPinnedlistadp pinnedlistadp=new WaimaiPinnedlistadp(this.getActivity(),Stores);
+		pinnedSectionListView.setAdapter(pinnedlistadp);
+		setPinnedListHeight();
+	}
+	private void setPinnedListHeight() {
+		// TODO Auto-generated method stub
+       Adapter lsAdapter=pinnedSectionListView.getAdapter();
+       int totalheight=0;
+      for(int i=0;i<lsAdapter.getCount();i++)
+      {
+    	  View v=lsAdapter.getView(i, null, pinnedSectionListView);
+    	  v.measure(0, 0);
+    	  totalheight+=v.getMeasuredHeight();
+      }
+      totalheight+=pinnedSectionListView.getDividerHeight()*(pinnedSectionListView.getCount()-1);
+      ViewGroup.LayoutParams params=pinnedSectionListView.getLayoutParams();
+      params.height=totalheight;
+      pinnedSectionListView.setLayoutParams(params);
+
+      }
+	public void  initViewPager() {
+		
+		View v=layoutInflater.inflate(R.layout.waimaiadv1, null);
+		views.add(v);
+		MyPagerAdaper pagerAdaper=new MyPagerAdaper(views);
+		vpViewPager.setAdapter(pagerAdaper);
+		vpViewPager.setCurrentItem(0);	
+		
+	}
+	public void addListener()
+	{
+		tb_tv1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Log.d("ss", "text!!!");
+			}
+		});
+		
+		
+		marqueeTextView.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				int[] locationofedit=new int[2];
+
+			    android.view.ViewGroup.LayoutParams layoutParams=relativeLayout.getLayoutParams();
+			    Log.d("height", ""+relativeLayout.getHeight());
+			    Log.d("height", ""+relativeLayout.getWidth());
+				if(heightRela==0)
+				{
+				
+					heightRela=relativeLayout.getHeight();
+					bit=heightRela;
+				}
+				layoutParams.height=(int)(bit*0.9);
+				if(layoutParams.height<0)
+				{
+					layoutParams.height=0;
+				}
+			  bit=layoutParams.height;
+			   relativeLayout.setLayoutParams(layoutParams);
+				
+			}
+			
+		});
+	}
+	public void getStoreData() {
+		Store store=new Store();
+		store.setName("南区福建沙县小吃");
+		store.setFavourValue(4);
+		store.setMinPay(50);
+		store.setDispatch(5);
+		store.setLogoid(R.drawable.waimailogo1);
+        store.setWorkState(true);
+        store.setSpeed("18分钟/1公里");
+        Stores.add(store);
+        
+        store=new Store();
+    	store.setName("煲工坊美食店");
+		store.setFavourValue(3);
+		store.setMinPay(20);
+		store.setDispatch(0);
+		store.setLogoid(R.drawable.waimailogo2);
+        store.setWorkState(false);
+        Stores.add(store);
+        
+        store=new Store();
+    	store.setName("北区沙县风味小吃");
+		store.setFavourValue(4.5f);
+		store.setMinPay(20);
+		store.setDispatch(0);
+		store.setLogoid(R.drawable.waimailogo3);
+        store.setWorkState(false);
+        Stores.add(store);
+        
+       store=new Store();
+    	store.setName("肯德基");
+		store.setFavourValue(5);
+		store.setMinPay(30);
+		store.setDispatch(0);
+		store.setSpeed("15分钟/900米");
+		store.setLogoid(R.drawable.waimailogo4);
+        store.setWorkState(true);
+        Stores.add(store);
+        
+        store=new Store();
+    	store.setName("北区沙县风味小吃");
+		store.setFavourValue(4.5f);
+		store.setMinPay(20);
+		store.setDispatch(0);
+		store.setLogoid(R.drawable.waimailogo3);
+        store.setWorkState(false);
+        Stores.add(store);
+        
+        store=new Store();
+       	store.setName("肯德基");
+   		store.setFavourValue(5);
+   		store.setMinPay(30);
+   		store.setDispatch(0);
+   		store.setSpeed("15分钟/900米");
+   		store.setLogoid(R.drawable.waimailogo4);
+           store.setWorkState(true);
+           Stores.add(store);
+        
+        store=new Store();
+    	store.setName("江东美食店");
+		store.setFavourValue(1);
+		store.setMinPay(10);
+		store.setDispatch(2);
+		store.setLogoid(R.drawable.waimailogo5);
+        store.setWorkState(false);
+        Stores.add(store);
+        
+	}
+private String[] spinStrings1={"分类 ","小吃零食 ","正餐","快餐"};
+private String[] spinStrings2={"智能排序","距离最近","评价最好","速度最快"};
+private  String[] spinStrings3={"帅选","暂无"};
+	private String[] mStrings = { "Abbaye de Belloc", "Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi",
+			"Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu", "Airag", "Airedale", "Aisy Cendre",
+			"Allgauer Emmentaler", "Abbaye de Belloc", "Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi",
+			"Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu", "Airag", "Airedale", "Aisy Cendre",
+			"Allgauer Emmentaler" };
+	
+}

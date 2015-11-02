@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/relative_parent"
+    android:layout_height="match_parent" >
+  <RelativeLayout
+        android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:visibility="gone"
+        android:id="@+id/cart_menu" >
+      
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="60dp"
+    android:orientation="horizontal" >
+    
+ <ListView 
+     android:id="@+id/listview_cart_left"
+     android:layout_width="0dp"
+     android:layout_weight="1.5"
+     
+     android:layout_height="match_parent"
+     ></ListView>
+      <Widget.PinnedHeaderExpandableListView
+        android:id="@+id/explistview"
+        android:layout_weight="4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="0.0dip"
+        android:cacheColorHint="#00000000"
+        android:choiceMode="singleChoice"
+        android:drawSelectorOnTop="false"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="true"
+        android:groupIndicator="@null"
+        android:scrollbars="vertical"
+        android:scrollingCache="true" />
+
+    
+</LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        style="@style/cart_menu_car">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tv_car_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shopcart_count"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/iv_add_cart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/cartcart" />
+
+            <TextView
+                android:id="@+id/tv_min_charge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textColor="#999999"
+                android:layout_marginRight="5dp"
+                android:text="￥100 起送"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_add_cart"
+                android:text="￥0"
+                android:textColor="@color/sum"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/button_balance"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@color/balance"
+                android:text="结算"
+                android:textColor="@color/balance_text"
+                android:textSize="23dp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </FrameLayout>
+       </RelativeLayout>
+       <RelativeLayout 
+    android:id="@+id/progressbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    android:orientation="vertical" >
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textDirection="firstStrong" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="加载数据中.." />
+
+</RelativeLayout>
+
+<RelativeLayout 
+    android:id="@+id/progressbar_error"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone" >
+
+    <Button
+        android:id="@+id/button_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        style="@style/error_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_error"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="网络不给力" />
+
+</RelativeLayout>
+
+   </RelativeLayout>

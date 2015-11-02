@@ -1,0 +1,108 @@
+package Fragments;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Store;
+
+import za.co.immedia.pinnedheaderlistview.PinnedHeaderListView;
+
+import Widget.MarqueeTextView;
+import adp.WaimaiPinnedlistadp;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.example.hungrytest.R;
+import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+
+public class Fragmentdingdan extends Fragment {
+	
+	View view;
+	LayoutInflater layoutInflater;
+	List<View> views=new ArrayList<View>();
+	PinnedHeaderListView pinnedSectionListView;
+	List<Store> Stores=new ArrayList<Store>();
+	
+	@Override
+	public View onCreateView(LayoutInflater arg0, ViewGroup arg1, Bundle arg2)
+	{
+		view=arg0.inflate(R.layout.fragment_dingdan, null);
+		layoutInflater=arg0;
+		getStoreData();
+		init();
+		
+		return view;
+	}
+	public void init() {
+	
+        pinnedSectionListView=(PinnedHeaderListView) view.findViewById(R.id.pinnedlist_waimai1);
+	        LinearLayout header1 = (LinearLayout) layoutInflater.inflate(R.layout.header, null);  
+	        ((TextView) header1.findViewById(R.id.textView_header)).setText("HEADER 1");  
+	        LinearLayout header2 = (LinearLayout) layoutInflater.inflate(R.layout.header, null); 
+	        ((TextView) header2.findViewById(R.id.textView_header)).setText("HEADER 2");  
+	        LinearLayout footer = (LinearLayout) layoutInflater.inflate(R.layout.header, null); 
+	        ((TextView) footer.findViewById(R.id.textView_header)).setText("FOOTER");  
+	        pinnedSectionListView.addHeaderView(header1);  
+	  
+		
+
+    	WaimaiPinnedlistadp adpExpandabledap=new WaimaiPinnedlistadp(this.getActivity(),Stores);
+		pinnedSectionListView.setAdapter(adpExpandabledap);
+	}
+	public void getStoreData() {
+		Store store1=new Store();
+		store1.setName("南区福建沙县小吃");
+		store1.setFavourValue(4);
+		store1.setMinPay(50);
+		store1.setDispatch(5);
+		store1.setLogoid(R.drawable.waimailogo1);
+        store1.setWorkState(true);
+        Stores.add(store1);
+        
+        Store store2=new Store();
+    	store2.setName("煲工坊美食店");
+		store2.setFavourValue(3);
+		store2.setMinPay(20);
+		store2.setDispatch(0);
+		store2.setLogoid(R.drawable.waimailogo2);
+        store2.setWorkState(false);
+        Stores.add(store2);
+        
+        Store store3=new Store();
+    	store3.setName("北区沙县风味小吃");
+		store3.setFavourValue(4.5f);
+		store3.setMinPay(20);
+		store3.setDispatch(0);
+		store3.setLogoid(R.drawable.waimailogo3);
+        store3.setWorkState(false);
+        Stores.add(store3);
+        
+        Store store4=new Store();
+    	store4.setName("肯德基");
+		store4.setFavourValue(5);
+		store4.setMinPay(30);
+		store4.setDispatch(0);
+		store4.setLogoid(R.drawable.waimailogo4);
+        store4.setWorkState(false);
+        Stores.add(store4);
+        
+        Store store5=new Store();
+    	store5.setName("江东美食店");
+		store5.setFavourValue(1);
+		store5.setMinPay(10);
+		store5.setDispatch(2);
+		store5.setLogoid(R.drawable.waimailogo5);
+        store5.setWorkState(false);
+        Stores.add(store5);
+        
+	}
+}

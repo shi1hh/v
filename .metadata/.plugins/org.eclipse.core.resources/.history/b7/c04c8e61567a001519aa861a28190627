@@ -1,0 +1,45 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="text">
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="waimai_tb_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="waimai_money_text">
+        <item name="android:textColor">#FF3030</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="waimai_store_name_textsize">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="normal_text">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView_gridview_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/faxiangrid1" />
+
+    <TextView
+        android:id="@+id/textView_gridview_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="TextView" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView_gridview_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button1"
+            android:layout_alignBottom="@+id/button1"
+            android:layout_alignParentLeft="true"
+            android:drawableLeft="@drawable/faxiangrid5"
+            android:drawablePadding="5dp"
+            android:padding="5dp"
+            android:text="TextView"
+            android:textColor="#FF4500" />
+
+        <Button
+            android:id="@+id/button_gridview_reward"
+            style="@style/faxian_reward_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView_gridview_price"
+            android:layout_alignBottom="@+id/textView_gridview_price"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="7dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fooder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/button_gengduohaoli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shap_faxian_gengduohaoli"
+            android:padding="@dimen/padding_faxian_gengduohaoli_btn"
+            android:text="@string/faxian_gengduohaoli_button" />
+
+        <TextView
+            android:id="@+id/textView_footder"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_below="@+id/button_gengduohaoli"
+            android:layout_centerHorizontal="true"
+            android:clickable="false" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blackground"
+        android:padding="8dp" >
+
+        <Widget.MarqueeTextView
+            android:id="@+id/Textview_waimai_tile_2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/blackground"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="信和门业附近(阳江市)"
+            android:textColor="@color/white"
+            android:textSize="21sp" />
+
+        <Button
+            android:id="@+id/button_waimai_tile_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/Textview_waimai_tile_2"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/Textview_waimai_tile_2"
+            android:background="@drawable/waimaititle3" />
+
+        <Button
+            android:id="@+id/button_waimai_tile_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/Textview_waimai_tile_2"
+            android:background="@drawable/waimaititle1" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blackground"
+        android:padding="12dp" >
+
+        <EditText
+            android:id="@+id/editText_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="请输入商家或商品名称"
+            android:padding="10dp"
+            android:textColorHint="@color/text_gray" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_refresh_scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrMode="both" >
+
+        <LinearLayout
+            android:id="@+id/sub_root_lin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager_waimai_adv"
+                android:layout_width="match_parent"
+                android:layout_height="90dp" >
+            </android.support.v4.view.ViewPager>
+
+            <TableLayout
+           android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/tb_tv1"
+                        style="@style/waimai_tb_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="0px"
+                        android:drawableTop="@drawable/t1"
+                        android:text="@string/waimai_tb1" />
+
+                    <TextView
+                        android:id="@+id/tb_tv2"
+                        style="@style/waimai_tb_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="0px"
+                        android:drawableTop="@drawable/t2"
+                        android:text="@string/waimai_tb2" />
+
+                    <TextView
+                        android:id="@+id/tb_tv3"
+                        style="@style/waimai_tb_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="0px"
+                        android:drawableTop="@drawable/t3"
+                        android:text="@string/waimai_tb3" />
+
+                    <TextView
+                        android:id="@+id/tb_tv4"
+                        style="@style/waimai_tb_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="0px"
+                        android:drawableTop="@drawable/t4"
+                        android:text="@string/waimai_tb4" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/tb_tv2_1"
+                        style="@style/waimai_tb_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="0px"
+                        android:drawableTop="@drawable/t5"
+                        android:text="@string/waimai_tb5" />
+
+                    <TextView
+                        android:id="@+id/tb_tv2_2"
+                        style="@style/waimai_tb_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="0px"
+                        android:drawableTop="@drawable/t6"
+                        android:text="@string/waimai_tb6" />
+
+                    <TextView
+                        android:id="@+id/tb_tv2_3"
+                        style="@style/waimai_tb_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="0px"
+                        android:drawableTop="@drawable/t7"
+                        android:text="@string/waimai_tb7" />
+                    
+                    <TextView
+                        android:id="@+id/tb_tv2_12344567"
+                        android:layout_column="2" 
+                        style="@style/waimai_tb_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:visibility="invisible"
+                        android:layout_weight="1" />
+                </TableRow>
+            </TableLayout>
+            <View      android:layout_width="fill_parent"  android:layout_height="12dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/waimai_divider"  />
+            
+            <LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <Spinner
+        android:id="@+id/spinner_waimai_listview1"
+            android:background="@drawable/spinner_waimai_img"
+    android:layout_weight="1"
+        android:layout_width="0dp"
+        android:background=""
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/spinner_waimai_listview2"
+   android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/spinner_waimai_listview3"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+            
+            
+            <ListView 
+                android:id="@+id/listview_waimai"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                ></ListView>
+               <TextView
+        android:id="@+id/textView_di1ngdan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单" />
+                  <TextView
+        android:id="@+id/textView_din21gdan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单" />
+                     <TextView
+        android:id="@+id/textView_ding21d2an"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单" />
+                        <TextView
+        android:id="@+id/textView_din21g1dan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单" />
+            
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</LinearLayout>
